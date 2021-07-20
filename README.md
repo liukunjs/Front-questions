@@ -1,4 +1,4 @@
-* debounce 和 thrrow
+* debounce 和 throttle
 
 #####原理
 1.throttle 比如电梯。保证如果电梯第一个人进来后，15秒后准时运送一次，不等待。如果没有人，则待机。
@@ -19,8 +19,8 @@ function inputFun(){
     console.log(1111)
 
 }
-input.addEventListener("input",thrrow2(inputFun,2000))
-function thrrow(fun,dely){
+input.addEventListener("input",throttle2(inputFun,2000))
+function throttle(fun,dely){
     let canrun = true
     return function(...arg){
         if(canrun){
@@ -34,7 +34,7 @@ function thrrow(fun,dely){
     }
 }
 // 利用时间差计算
-function thrrow2(fun,dely){
+function throttle2(fun,dely){
     let time = new Date()
     return function(...arg){
         let newDate = new Date()
