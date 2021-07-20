@@ -270,7 +270,7 @@ http://www.a.com/b.js	不同域名	不允许
 ```
 ###### 防止cookie 窃取
 * 设置httpOnly 为true,无法通过js脚本获取cookie
-* 合理的时间内修改seeionid
+* 合理的时间内修改sessionid
 * 使用token (服务端返回的加密字符)
 * 校验头部信息User-Agent验 等
 ##### 如果用户关闭了cookie怎么办
@@ -416,7 +416,7 @@ from   to            老生代存档区
     let add = document.getElementById("add")
     add.addEventListener("click",fn)
 ```
-在 chrom 浏览器，中的memery中查找deta，会发现有分离dom，虽然没有使用，但没js引用
+在 chrome 浏览器，中的memory中查找data，会发现有分离dom，虽然没有使用，但没js引用
 #### 优化方式
 1 慎用全局变量
 * 会导致垃圾回收到结束时才使用
@@ -435,14 +435,14 @@ let doc =  document
     doc.getElementById("ll")
    doc.getElementById("ll") doc.getElementById("ll")
 ```
-在jsperf 上性能会提升很多
+在js perf 上性能会提升很多
 
 3通过原型链的方法替代构造函数本身的方法
 ```
 function Person(){
     this.mame = funciton (){}
 }
-unction Person1(){
+function Person1(){
 }
 Person1.prototype.name=funciton (){}
 ```
@@ -528,7 +528,7 @@ let b = new String("1111")
                     
 ```
 ###### 强缓存
- 不需要去服务器获取数据，从本地获取，serviceWorker 、memery cashe、dask cache。
+ 不需要去服务器获取数据，从本地获取，serviceWorker 、memory cache、disk cache。
  这些缓存得设置由 Expires、 cache control、pragma三个决定pragma的级别最高 
  
  
@@ -608,8 +608,8 @@ self.addEventLister("fetch",()=>{
     cache.match()
 })
 ```
-* memery cache 如get 的一些img ,cdn 
-* dick cache 存储了 url 的ip地址，cookie。
+* memory cache 如get 的一些img ,cdn 
+* disk cache 存储了 url 的ip地址，cookie。
 * Etag/if-no-match 、Last modify/if-modify-since
 ##### 跨域
 * Access-control-Allow-origin * 
@@ -705,7 +705,7 @@ function compose(f,g){
 * commonJs 是同步加载模块，用于nodeJs ，因为node 文件加载都在本地进行
 * AMD 是requireJs的推广的模块化思想，异步加载数据
 * CMD 是sea.js推广过程的模块化思想
-* UMD 是AMD he CommonJS 的合并产物
+* UMD 是AMD 和 CommonJS 的合并产物
 ```
 // AMD
 define(key,[a.js,b.js],funcion()=>{
@@ -1111,7 +1111,7 @@ console.log(new Map(Object.entries(obj2)))
 
 可以将对象的键值对完美的变成二维数组形式，而这种形式刚好是map想要的形式
 
-##### [](#objectgetownpropertydescriptors)Object.getOwnPropertyDescriptors
+##### [](#object getownproperty descriptors)Object.getOwnPropertyDescriptors
 
 ```
 let p1 = {
